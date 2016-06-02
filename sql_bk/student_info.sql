@@ -1,3 +1,4 @@
+
 create database student_info;
 
 use student_info;
