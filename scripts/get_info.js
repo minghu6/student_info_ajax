@@ -42,18 +42,19 @@ function displayDetails() {
             //var detailDiv = document.getElementById("description");
             var responseDoc = request.responseXML;
             
-             var sexuality = responseDoc.getElementsByTagName('sexuality')[0];
-             var birth = responseDoc.getElementsByTagName('birth')[0];
-             var contact_way = responseDoc.getElementsByTagName('contact_way')[0];
-             var entry_date = responseDoc.getElementsByTagName('entry_date')[0];
-             var _from = responseDoc.getElementsByTagName('_from')[0];
+             var sexuality = responseDoc.getElementsByTagName('sexuality')[0].firstChild.nodeValue;
+             var birth = responseDoc.getElementsByTagName('birth')[0].firstChild.nodeValue;
+             var contact_way = responseDoc.getElementsByTagName('contact_way')[0].firstChild.nodeValue;
+             var entry_date = responseDoc.getElementsByTagName('entry_date')[0].firstChild.nodeValue;
+             var _from = responseDoc.getElementsByTagName('_from')[0].firstChild.nodeValue;
              
+			 /*
             sexuality = '女';
             birth = '1999-01-01';
             contact_way = '123456789';
             _from = '关东';
             entry_date = '2013-01-01';
-
+			*/
             var sexuality_node = document.createTextNode("性别： " + sexuality);
             var birth_node = document.createTextNode("出生日期：" + birth);
             var contact_way_node = document.createTextNode("联系方式：" + contact_way);
